@@ -18,6 +18,7 @@ List of parts:
 13. 330 ohm resistors x4
 14. 3 Red 5mm LEDs, and another of any color (i used green) for the main power light.
 15. Misc wires (i used scrap ethernet cable and some dupont jumpers i got on amazon)
+16. USB battery bank (maybe not the smallest cheapest thing you can find, but it doesnt need to be huge)
 
 1. i used those cheaper arduino clones i linked, should be interchangeable with any arduino nano.
 2. i used the 2mb version, and with the sounds i provided it came in just under 2mb, there is a 16mb version if you want to use your own sound effects, or have them higher quality.
@@ -34,6 +35,8 @@ List of parts:
 13. might depend on the LEDs you get, but they should all be relatively the same. these just limit the current to keep the LEDs from burning out
 14. these are for the base of the "fingers". in the game there were 3 red lights at the base as well and another 3 at the first joint. i opted for just the 3 for simplicity.
 15. this is not exactly a power hog, so any wires should do fine.
+16. with the exact parts listed above, minus the neopixel ring (i was originally going to just use 2 jewels), and only a single 8 ohm speaker hooked to the amp, with the amp at full volume i registered a little over an amp of current. i plan on running the 2 4-ohm speakers on each channel which will increase the current draw (i plan on testing it once i get it put together completly.) i have a battery which can supply 2 amps per usb, and a total of 3.2. if i notice power issues, i may hook the amp power to its own usb cord. i will try to remember to update this once i am done.
+
 
 Power:
 
