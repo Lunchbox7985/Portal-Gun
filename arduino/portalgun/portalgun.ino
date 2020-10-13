@@ -14,17 +14,20 @@
 
 // pins for 3 red leds and lights in buttons
 int Leds = A0;
-int BtnLeds = A1;
+int BbtnLed = A1;
+int ObtnLed = A2;
 
 // neopixel pins / setup
-#define NEO_INDICATOR 2 // top indicator
-Adafruit_NeoPixel IndLight = Adafruit_NeoPixel(1, NEO_INDICATOR, NEO_GRB + NEO_KHZ800);
+#define NEO_PIXELS 2
+Adafruit_NeoPixel NeoPixels = Adafruit_NeoPixel(31, NEO_PIXELS, NEO_GRB + NEO_KHZ800);
 
-#define NEO_CENTER 3 // center rod
-Adafruit_NeoPixel CenterLights = Adafruit_NeoPixel(7, NEO_CENTER, NEO_GRB + NEO_KHZ800);
-
-#define NEO_END 4 // end of barrel
-Adafruit_NeoPixel EndLights = Adafruit_NeoPixel(7, NEO_END, NEO_GRB + NEO_KHZ800);
+// Index numbers for the LEDs in the neopixels. since i used 2 jewels for the center, one ring for the end, and a single for the indicator, 
+//i set them as below. if you use a different number or type of pixels, change these numbers accordingly. the indicator light is first in the chain
+//so it is number 0
+int centerStart = 1;
+int centerEnd = 7;
+int ringStart = 8;
+int ringEnd = 23;
 
 // inputs for switches and buttons
 const int SONGBTN = 5;
@@ -66,22 +69,13 @@ void setup() {
   // set act modes for the fx board
   pinMode(ACT, INPUT);
   pinMode(Leds, OUTPUT);
-  pinMode(BtnLeds, OUTPUT);
+  pinMode(BbtnLed, OUTPUT);
+  pinMode(ObtnLed, OUTPUT);
 
-  // configure indicator light
-  IndLight.begin();
-  IndLight.setBrightness(255);
-  IndLight.show(); // Initialize all pixels to 'off'
-
-  // configure center lights
-  CenterLights.begin();
-  CenterLights.setBrightness(255);
-  CenterLights.show(); // Initialize all pixels to 'off'
-
-  // configure end lights
-  EndLights.begin();
-  EndLights.setBrightness(255);
-  EndLights.show(); // Initialize all pixels to 'off'
+  // configure neo pixels
+  NeoPixels.begin();
+  NeoPixels.setBrightness(255);
+  NeoPixels.show(); // Initialize all pixels to 'off'
 
   // set the modes for the switches/buttons
   pinMode(SONGBTN, INPUT);
@@ -147,7 +141,8 @@ void loop() {
   if (PowerSw == 0 && Power == false) {
     Power = true;
     analogWrite(Leds, 175); //turn 3 red leds on
-    analogWrite(BtnLeds, 200); // turn button leds on
+    analogWrite(BbtnLed, 200); // turn blue button led on
+    analogWrite(ObtnLed, 200); // turn orange button led on
     playAudio(powerup, playing);
   }
 
@@ -156,7 +151,8 @@ void loop() {
     Power = false;
     playAudio(powerdown, playing);
     analogWrite(Leds, 0); //turn 3 red leds off
-    analogWrite(BtnLeds, 0); // turn leds in buttons off
+    analogWrite(BbtnLed, 0); // turn blue button led off
+    analogWrite(ObtnLed, 0); // turn orange button led off
     setLightsState(2); //set blue or orange light to off
   }
 
@@ -208,34 +204,31 @@ void setLightsState(int state)
     case 0: // orange fire
       for (int d = 25, b = 25; (d > 0) && (b < 50); d--, b++) //starts at 50 percent, center light dims then brightens, end light brightens then dims
       {
-        for (int j = 0; j < CenterLights.numPixels(); j++)
+        for (int j = centerStart; j <= centerEnd; j++)
         {
-          CenterLights.setPixelColor(j, CenterLights.Color(d * 5, d, 0)); //i get orange to dim properly by setting green to a number and setting red to 5 times what green is
+          NeoPixels.setPixelColor(j, NeoPixels.Color(d * 5, d, 0)); //i get orange to dim properly by setting green to a number and setting red to 5 times what green is
         }
         {
-          for (int k = 0; k < EndLights.numPixels(); k++)
+          for (int k = ringStart; k <= ringEnd; k++)
           {
-            EndLights.setPixelColor(k, EndLights.Color(b * 5, b, 0));
+            NeoPixels.setPixelColor(k, NeoPixels.Color(b * 5, b, 0));
           }
-          CenterLights.show();
-          EndLights.show();
+          NeoPixels.show();
           delay(0);
         }
       }
       for (int d = 0, b = 50; (d < 25) && (b > 25); d++, b--) {
-        for (int j = 0; j < CenterLights.numPixels(); j++) {
-          CenterLights.setPixelColor(j, CenterLights.Color(d * 5, d, 0));
+        for (int j = centerStart; j <= centerEnd; j++) {
+          NeoPixels.setPixelColor(j, NeoPixels.Color(d * 5, d, 0));
         }
 
         {
-          for (int k = 0; k < EndLights.numPixels(); k++) {
-            EndLights.setPixelColor(k, EndLights.Color(b * 5, b, 0));
+          for (int k = ringStart; k <= ringEnd; k++) {
+            NeoPixels.setPixelColor(k, NeoPixels.Color(b * 5, b, 0));
           }
 
-          IndLight.setPixelColor(0, IndLight.Color(255, 50, 0));
-          IndLight.show();
-          EndLights.show();
-          CenterLights.show();
+          NeoPixels.setPixelColor(0, NeoPixels.Color(255, 50, 0));
+          NeoPixels.show();
           delay(20);
         }
       }
@@ -245,35 +238,32 @@ void setLightsState(int state)
 
       for (int d = 128, b = 128; (d > 0) && (b < 255); d--, b++)// same as orange above, except you just have to set blue between half and full
       {
-        for (int j = 0; j < CenterLights.numPixels(); j++)
+        for (int j = centerStart; j <= centerEnd; j++)
         {
-          CenterLights.setPixelColor(j, CenterLights.Color(0, 0, d));
+          NeoPixels.setPixelColor(j, NeoPixels.Color(0, 0, d));
         }
         {
-          for (int k = 0; k < EndLights.numPixels(); k++)
+          for (int k = ringStart; k <= ringEnd; k++)
           {
-            EndLights.setPixelColor(k, EndLights.Color(0, 0, b));
+            NeoPixels.setPixelColor(k, NeoPixels.Color(0, 0, b));
           }
-          IndLight.setPixelColor(1, 255, 50, 0);
-          CenterLights.show();
-          EndLights.show();
+          NeoPixels.setPixelColor(1, 255, 50, 0);
+          NeoPixels.show();
           delay(0);
         }
       }
       for (int d = 0, b = 255; (d < 128) && (b > 128); d++, b--) {
-        for (int j = 0; j < CenterLights.numPixels(); j++) {
-          CenterLights.setPixelColor(j, CenterLights.Color(0, 0, d));
+        for (int j = centerStart; j <= centerEnd; j++) {
+          NeoPixels.setPixelColor(j, NeoPixels.Color(0, 0, d));
         }
 
         {
-          for (int k = 0; k < EndLights.numPixels(); k++) {
-            EndLights.setPixelColor(k, EndLights.Color(0, 0, b));
+          for (int k = ringStart; k <= ringEnd; k++) {
+            NeoPixels.setPixelColor(k, NeoPixels.Color(0, 0, b));
           }
 
-          IndLight.setPixelColor(0, IndLight.Color(0, 0, 255));
-          IndLight.show();
-          EndLights.show();
-          CenterLights.show();
+          NeoPixels.setPixelColor(0, NeoPixels.Color(0, 0, 255));
+          NeoPixels.show();
           delay(4);
         }
       }
@@ -281,14 +271,10 @@ void setLightsState(int state)
 
 
     case 2: // set led off
-      for (int j = 0; j < CenterLights.numPixels(); j++) {
-        CenterLights.setPixelColor(j, 0);
-        EndLights.setPixelColor(j, 0);
-        IndLight.setPixelColor(0, 0);
+      for (int j = 0; j < NeoPixels.numPixels(); j++) {
+        NeoPixels.setPixelColor(j, 0);
       }
       break;
   }
-  IndLight.show();
-  CenterLights.show();
-  EndLights.show();
+  NeoPixels.show();
 }
