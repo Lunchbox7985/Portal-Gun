@@ -31,7 +31,7 @@ List of parts:
 9. same as above
 10. same as the switches, i designed the holes around these specific speakers.
 11. a little less picky as the rest of the parts, this is designed around a usb battery bank, so any 5v amplifier should work. the one i used was about the cheapest available.
-12. optional, as you coult hardwire power directly too the system. (more on that below)
+12. optional, as you could hardwire power directly too the system. (more on that below)
 13. might depend on the LEDs you get, but they should all be relatively the same. these just limit the current to keep the LEDs from burning out
 14. these are for the base of the "fingers". in the game there were 3 red lights at the base as well and another 3 at the first joint. i opted for just the 3 for simplicity.
 15. this is not exactly a power hog, so any wires should do fine.
