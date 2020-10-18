@@ -52,6 +52,6 @@ The song button is programmed to play "Still Alive". i have not included this in
 
 2 Power switches:
 
-the reason there are 2 power switches, is one is a true power switch that kills power to the whole circuit (so your battery doesn't drain when you aren't using it). The other switch is a simulated power switch. it powers the gun up and down (with power up and down sound effects). if you have the simulated power switch on when you turn the main power switch on, sometimes it just jumps straight into the idle hum, sometimes a couple of the lights turn green. either way the gun works as expected once you push a button.
+the reason there are 2 power switches, is one is a true power switch that kills power to the whole circuit (so your battery doesn't drain when you aren't using it). The other switch is a simulated power switch. it powers the gun up and down (with power up and down sound effects). if you have the simulated power switch on when you turn the main power switch on, sometimes it just jumps straight into the idle hum, sometimes a couple of the lights turn green. either way the gun works as expected once you push a button. I dont have the main power switch in the fritzing schematic, but it shouldnt be hard to figure out. the switch plate also has a spot for a 5mm LED next to that switch hole that i wired to main power so i wouldnt forget to turn that switch off.
 
 If you have any questions, comment on thingiverse, i might not see it imeediatly, but i will try my best to respond.
