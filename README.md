@@ -25,7 +25,7 @@ List of parts:
 3. again, i got knock offs, but any neopixel compatible clone should do. I hvae had good luck so far with DIYMall brand from amazon.
 4. same as above
 5. i bought a pack of 100 as they are cheap, if you do other projects they can come in handy, but this only needs one.
-6. the modified STL files i provided have cutouts for switchs of these dimensions specifically.
+6. the modified STL files i provided have cutouts for switches of these dimensions specifically.
 7. same as above
 8. same as above
 9. same as above
@@ -35,23 +35,23 @@ List of parts:
 13. might depend on the LEDs you get, but they should all be relatively the same. these just limit the current to keep the LEDs from burning out
 14. these are for the base of the "fingers". in the game there were 3 red lights at the base as well and another 3 at the first joint. i opted for just the 3 for simplicity.
 15. this is not exactly a power hog, so any wires should do fine.
-16. with the exact parts listed above, minus the neopixel ring (i was originally going to just use 2 jewels), and only a single 8 ohm speaker hooked to the amp, with the amp at full volume i registered a little over an amp of current. i plan on running the 2 4-ohm speakers on each channel which will increase the current draw (i plan on testing it once i get it put together completly.) i have a battery which can supply 2 amps per usb, and a total of 3.2. if i notice power issues, i may hook the amp power to its own usb cord. i will try to remember to update this once i am done.
+16. with the exact parts listed above, minus the neopixel ring (i was originally going to just use 2 jewels), and only a single 8 ohm speaker hooked to the amp, with the amp at full volume i registered a little over an amp of current. i plan on running the 2 4-ohm speakers on each channel which will increase the current draw (i plan on testing it once i get it put together completely.) i have a battery which can supply 2 amps per usb, and a total of 3.2. if i notice power issues, i may hook the amp power to its own usb cord. i will try to remember to update this once i am done.
 
 
 Power:
 
-notice i ran power directly to the 5v pin of the arduino. i believe this bypasses the voltage regulator and powers it directly. you could power the arduino off the VIN pin with a higer voltage battery and run the lights, fx board, and amp off this pin, but it would be pushing the arduino to the limit. i chose to just power everytrhing seperatly from the usb battery bank so i dont fry the arduino. be careful though, as if you plug in your usb cable with this hooked up, it will attempt to output 5v on this pin and power everything else. the amplifier i linked can be turned off with the volume knob, so you should be safe that way
+notice i ran power directly to the 5v pin of the arduino. i believe this bypasses the voltage regulator and powers it directly. you could power the arduino off the VIN pin with a higher voltage battery and run the lights, fx board, and amp off this pin, but it would be pushing the arduino to the limit. i chose to just power everything separately from the usb battery bank so i don't fry the arduino. be careful though, as if you plug in your usb cable with this hooked up, it will attempt to output 5v on this pin and power everything else. the amplifier i linked can be turned off with the volume knob, so you should be safe that way
 
 Button LEDs:
 
-The LEDs in the blue and red arcade buttons could be powered off either A1 or A2. with the dupont connectors i used, it was more convienent to have 2 seperate pins, but you dont have to use both of them if you dont want to. I do however have the 3 red LEDs a little dimmer, so A0 is different than A1 and A2.
+The LEDs in the blue and red arcade buttons could be powered off either A1 or A2. with the dupont connectors i used, it was more convenient to have 2 separate pins, but you don't have to use both of them if you dont want to. I do however have the 3 red LEDs a little dimmer, so A0 is different than A1 and A2.
 
 The Song:
 
-The song button is programmed to play "Still Alive". i have not included this in the files for copyright purposes. you will have to find a copy yourself. I formatted it to OGG , mono and the lowest quality to get it down to 1.08MB, Just name it "T06.OGG" and load it to your soundboard there is a little room on the 2MB board for it to be a little bigger than that. As stated above, you can always get the 16MB FX board for just a couple bucks more. i believe there are 4 models, 2MB and 16MB, both with and without a 3.5mm jack. any of them should work, but i did not use the headphone jack.
+The song button is programmed to play "Still Alive". i have not included this in the files for copyright purposes. you will have to find a copy yourself. I formatted it to OGG , mono and the lowest quality to get it down to 1.08MB there is a little room on the 2MB board for it to be a little bigger than that. As stated above, you can always get the 16MB FX board for just a couple bucks more. i believe there are 4 models, 2MB and 16MB, both with and without a 3.5mm jack. any of them should work, but i did not use the headphone jack.
 
 2 Power switches:
 
-the reason there are 2 power switches, is one is a true power switch that kills power to the whole circuit (so your battery doesn't drain when you aren't using it). The other switch is a simulated power switch. it powers the gun up and down (with power up and down sound effects). if you have the simulated power switch on when you turn the main power switch on, sometimes it just jumps straight into the idle hum, sometimes a couple of the lights turn green. either way the gun works as expected once you push a button. I dont have the main power switch in the fritzing schematic, but it shouldnt be hard to figure out. the switch plate also has a spot for a 5mm LED next to that switch hole that i wired to main power so i wouldnt forget to turn that switch off.
+the reason there are 2 power switches, is one is a true power switch that kills power to the whole circuit (so your battery doesn't drain when you aren't using it). The other switch is a simulated power switch. it powers the gun up and down (with power up and down sound effects). if you have the simulated power switch on when you turn the main power switch on, sometimes it just jumps straight into the idle hum, sometimes a couple of the lights turn green. either way the gun works as expected once you push a button.
 
-If you have any questions, comment on thingiverse, i might not see it imeediatly, but i will try my best to respond.
+If you have any questions, comment on thingiverse, i might not see it immediately, but i will try my best to respond.
