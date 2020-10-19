@@ -4,43 +4,57 @@ arduino setup for 3d printed portal gun
 List of parts:
 
 1. Arduino Nano (or clone) (https://www.amazon.com/ELEGOO-Arduino-ATmega328P-Without-Compatible/dp/B0713XK923/ref=sr_1_4?dchild=1&keywords=arduino+nano&qid=1602026870&sr=8-4)
+i used those cheaper arduino clones i linked, should be interchangeable with any arduino nano.
+
 2. Adafruit sound FX board (https://www.amazon.com/gp/product/B010M8UOR8/ref=ppx_yo_dt_b_asin_title_o07_s00?ie=UTF8&psc=1)
+i used the 2mb version, and with the sounds i provided it came in just under 2mb, there is a 16mb version if you want to use your own sound effects, or have them higher quality.
+
 3. Neopixel Jewel x2 (https://www.amazon.com/gp/product/B0105VMT4S/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+again, i got knock offs, but any neopixel compatible clone should do. I hvae had good luck so far with DIYMall brand from amazon.
+
 4. Neopixel Ring 16 led version (https://www.amazon.com/dp/B08F9HSNSD/?coliid=IWRMIFVUICFMT&colid=3CGBY3S7A1KD5&psc=1&ref_=lv_ov_lig_dp_it)
+same as above
+
 5. Individual Neopixel (https://www.amazon.com/gp/product/B01D1FFVOA/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+i bought a pack of 100 as they are cheap, if you do other projects they can come in handy, but this only needs one.
+
 6. 2 SPST Switches (https://www.digikey.com/en/products/detail/cw-industries/GRS-4011-0118/4425759)
+the modified STL files i provided have cutouts for switches of these dimensions specifically.
+
 7. 2 momentary buttons (i did one red and one black) (https://www.digikey.com/en/products/detail/e-switch/PS1023ARED/81776) (https://www.digikey.com/en/products/detail/e-switch/PS1023ABLK/82862)
+ same as above
+ 
 8. Blue arcade button (https://www.digikey.com/en/products/detail/adafruit-industries-llc/3432/7349494)
+ same as above
+ 
 9. Red arcade button (https://www.digikey.com/en/products/detail/adafruit-industries-llc/3430/7349492)
+ same as above
 10. 2 inch speakers (https://www.amazon.com/gp/product/B01CHYIU26/ref=ppx_yo_dt_b_asin_title_o05_s00?ie=UTF8&psc=1)
+same as the switches, i designed the holes around these specific speakers.
+
 11. 5 volt amplifier (https://www.amazon.com/gp/product/B07G4DLM9D/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+ a little less picky as the rest of the parts, this is designed around a usb battery bank, so any 5v amplifier should work. the one i used was about the cheapest available.
+
 12. Micro usb board (https://www.amazon.com/gp/product/B07B5ZDLJY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
+optional, as you could hardwire power directly too the system. (more on that below)
+
 13. 330 ohm resistors x4
+ might depend on the LEDs you get, but they should all be relatively the same. these just limit the current to keep the LEDs from burning out
+ 
 14. 3 Red 5mm LEDs, and another of any color (i used green) for the main power light.
+these are for the base of the "fingers". in the game there were 3 red lights at the base as well and another 3 at the first joint. i opted for just the 3 for simplicity.
+
 15. Misc wires (i used scrap ethernet cable and some dupont jumpers i got on amazon)
+ this is not exactly a power hog, so any wires should do fine.
+ 
 16. USB battery bank (maybe not the smallest cheapest thing you can find, but it doesnt need to be huge)
+with the exact parts listed above, minus the neopixel ring (i was originally going to just use 2 jewels), and only a single 8 ohm speaker hooked to the amp, with the amp at full volume i registered a little over an amp of current. i plan on running the 2 4-ohm speakers on each channel which will increase the current draw (i plan on testing it once i get it put together completely.) i have a battery which can supply 2 amps per usb, and a total of 3.2. if i notice power issues, i may hook the amp power to its own usb cord. i will try to remember to update this once i am done.
+
 17. 20mm or .8 inch acrylic rod. (https://www.amazon.com/gp/product/B0832JFR7F/ref=ppx_yo_dt_b_asin_title_o01_s00?ie=UTF8&psc=1)
+i used a "bubble rod" so the lights were a little more visable in it. 20mm or .8 inch should work, these seem to come and go. every time i come back to order one again its unavailable and i have to find another seller. check amazon or ebay.
+
 18. Clear pipe 2.5 inch (https://www.homedepot.com/p/POWERTEC-2-1-2-in-x-36-in-Long-Clear-Pipe-70176/207185612)
-
-
-1. i used those cheaper arduino clones i linked, should be interchangeable with any arduino nano.
-2. i used the 2mb version, and with the sounds i provided it came in just under 2mb, there is a 16mb version if you want to use your own sound effects, or have them higher quality.
-3. again, i got knock offs, but any neopixel compatible clone should do. I hvae had good luck so far with DIYMall brand from amazon.
-4. same as above
-5. i bought a pack of 100 as they are cheap, if you do other projects they can come in handy, but this only needs one.
-6. the modified STL files i provided have cutouts for switches of these dimensions specifically.
-7. same as above
-8. same as above
-9. same as above
-10. same as the switches, i designed the holes around these specific speakers.
-11. a little less picky as the rest of the parts, this is designed around a usb battery bank, so any 5v amplifier should work. the one i used was about the cheapest available.
-12. optional, as you could hardwire power directly too the system. (more on that below)
-13. might depend on the LEDs you get, but they should all be relatively the same. these just limit the current to keep the LEDs from burning out
-14. these are for the base of the "fingers". in the game there were 3 red lights at the base as well and another 3 at the first joint. i opted for just the 3 for simplicity.
-15. this is not exactly a power hog, so any wires should do fine.
-16. with the exact parts listed above, minus the neopixel ring (i was originally going to just use 2 jewels), and only a single 8 ohm speaker hooked to the amp, with the amp at full volume i registered a little over an amp of current. i plan on running the 2 4-ohm speakers on each channel which will increase the current draw (i plan on testing it once i get it put together completely.) i have a battery which can supply 2 amps per usb, and a total of 3.2. if i notice power issues, i may hook the amp power to its own usb cord. i will try to remember to update this once i am done.
-17. i used a "bubble rod" so the lights were a little more visable in it. 20mm or .8 inch should work, these seem to come and go. every time i come back to order one again its unavailable and i have to find another seller. check amazon or ebay.
-18. i had a hard time finding the metric size the original designer had used as i am in the states, he had used 60mm which is about 2.3 inch. i made the hole big enough to fit the 2.5 inch pipe i found from home depot (and it was a tight fit.)
+i had a hard time finding the metric size the original designer had used as i am in the states, he had used 60mm which is about 2.3 inch. i made the hole big enough to fit the 2.5 inch pipe i found from home depot (and it was a tight fit.)
 
 Power:
 
