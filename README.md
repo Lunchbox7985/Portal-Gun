@@ -33,7 +33,8 @@ the modified STL files i provided have cutouts for switches of these dimensions 
 same as the switches, i designed the holes around these specific speakers.
 
 11. 5 volt amplifier (https://www.amazon.com/gp/product/B07G4DLM9D/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
- a little less picky as the rest of the parts, this is designed around a usb battery bank, so any 5v amplifier should work. the one i used was about the cheapest available.
+ a little less picky as the rest of the parts, this is designed around a usb battery bank, so any 5v amplifier should work. the one i used was about the cheapest available. also the hole in the hatch is designed around this one mounting to give you access to the volume knob.
+
 
 12. Micro usb board (https://www.amazon.com/gp/product/B07B5ZDLJY/ref=ppx_yo_dt_b_search_asin_title?ie=UTF8&psc=1)
 optional, as you could hardwire power directly too the system. (more on that below)
