@@ -25,9 +25,9 @@ Adafruit_NeoPixel NeoPixels = Adafruit_NeoPixel(31, NEO_PIXELS, NEO_GRB + NEO_KH
 //i set them as below. if you use a different number or type of pixels, change these numbers accordingly. the indicator light is first in the chain
 //so it is number 0
 int centerStart = 1;
-int centerEnd = 7;
-int ringStart = 8;
-int ringEnd = 23;
+int centerEnd = 14;
+int ringStart = 15;
+int ringEnd = 30;
 
 // inputs for switches and buttons
 const int SONGBTN = 5;
@@ -247,7 +247,7 @@ void setLightsState(int state)
           {
             NeoPixels.setPixelColor(k, NeoPixels.Color(0, 0, b));
           }
-          NeoPixels.setPixelColor(1, 255, 50, 0);
+          NeoPixels.setPixelColor(0, 0, 0, 255);
           NeoPixels.show();
           delay(0);
         }
