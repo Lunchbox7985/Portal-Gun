@@ -67,7 +67,7 @@ The LEDs in the blue and red arcade buttons could be powered off either A1 or A2
 
 The Song:
 
-The song button is programmed to play "Still Alive". i have not included this in the files for copyright purposes. you will have to find a copy yourself. I formatted it to OGG , mono and the lowest quality to get it down to 1.08MB there is a little room on the 2MB board for it to be a little bigger than that. As stated above, you can always get the 16MB FX board for just a couple bucks more. i believe there are 4 models, 2MB and 16MB, both with and without a 3.5mm jack. any of them should work, but i did not use the headphone jack.
+The song button is programmed to play "Still Alive". i have not included this in the files for copyright purposes. you will have to find a copy yourself. I formatted it to OGG , mono and the lowest quality to get it down to 1.08MB. Name it T06.ogg there is a little room on the 2MB board for it to be a little bigger than that. As stated above, you can always get the 16MB FX board for just a couple bucks more. i believe there are 4 models, 2MB and 16MB, both with and without a 3.5mm jack. any of them should work, but i did not use the headphone jack.
 
 2 Power switches:
 
